@@ -4,15 +4,14 @@ import { NavBarComponent } from './components/navbar/navbar.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { RouterModule }   from '@angular/router';
+import { RouterModule,Routes }   from '@angular/router';
 import { AppComponent }  from './app.component';
 
-@NgModule({
-  imports:      [ BrowserModule,
-    RouterModule.forRoot([
-      {
+const routes : Routes = [
+  {
         path: '',
-        component: HomeComponent
+        redirectTo: 'home',
+        pathMatch : 'full' 
       },
       {
         path: 'home',
@@ -21,7 +20,11 @@ import { AppComponent }  from './app.component';
         path : 'about',
         component : AboutComponent
       }
-    ])
+]
+
+@NgModule({
+  imports:      [ BrowserModule,
+    RouterModule.forRoot(routes)
    ],
   declarations: [ AppComponent,NavBarComponent,JumbotronComponent,
     HomeComponent,AboutComponent

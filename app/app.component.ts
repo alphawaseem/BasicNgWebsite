@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   template: `
     <nav-bar></nav-bar>
     <jumbotron></jumbotron>
-    <home></home>
+    <router-outlet></router-outlet>
   `,
 })
 export class AppComponent  { }

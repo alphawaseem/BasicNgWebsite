@@ -17,6 +17,7 @@ export class NavBarComponent {
         this.projectName = "A2Website";
         this.items.push(new NavItem('Home','/home'));
         this.items.push(new NavItem('About','/about'));
+        this.selectedItem=this.items[0];
     }
 
     selectItem(item:NavItem):boolean{
